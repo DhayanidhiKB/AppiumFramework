@@ -1,14 +1,14 @@
-package org.appium.pageObjects;
+package org.appium.tests;
 
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class eCommercePlaceOrder extends BaseTest {
+public class EcommerceApp_TC02 extends BaseTest {
 
 
     @Test
-    public void FillForm() throws InterruptedException {
+    public void PlaceOrder() throws InterruptedException {
 
         formPage.setNameField("Praveen");
         formPage.setGender("Male");

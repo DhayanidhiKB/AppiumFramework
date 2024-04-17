@@ -7,6 +7,9 @@ import org.appium.utils.AndroidActions;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
+import org.testng.Assert;
+
+import java.util.List;
 
 public class FormPage extends AndroidActions {
 
@@ -33,6 +36,12 @@ public class FormPage extends AndroidActions {
     @AndroidFindBy(id="com.androidsample.generalstore:id/btnLetsShop")
     private WebElement submitForm;
 
+    @AndroidFindBy(xpath ="(//android.widget.Toast)[1]")
+    private WebElement errorMessage;
+
+    @AndroidFindBy(xpath = "(//android.widget.Toast)[1]")
+    private List<WebElement> formPageValidation;
+
     public void setNameField(String name){
         nameField.sendKeys(name);
         driver.hideKeyboard();
@@ -53,5 +62,14 @@ public class FormPage extends AndroidActions {
 
     public void setFormSelection(){
         submitForm.click();
+    }
+
+    public void validateErrorMessage(){
+        String attributeName=errorMessage.getAttribute("name");
+        Assert.assertEquals(attributeName, "Please enter your name");
+    }
+
+    public void formPagePositiveCase(){
+        formPageValidation.isEmpty();
     }
 }

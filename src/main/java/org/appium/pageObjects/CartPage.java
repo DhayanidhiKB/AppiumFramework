@@ -15,7 +15,7 @@ public class CartPage extends AndroidActions {
 
     public CartPage(AndroidDriver driver){
         super(driver);
-       this.driver=driver;
+        this.driver=driver;
         PageFactory.initElements(new AppiumFieldDecorator(driver),this);
     }
 
@@ -67,10 +67,6 @@ public class CartPage extends AndroidActions {
         proceedButton.click();
     }
 
-    public Double getFormattedAmount(String amount)
-    {
-        Double price = Double.parseDouble(amount.substring(1));
-        return price;
-    }
+
 
 }

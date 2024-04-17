@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <test  name="Form Page Validation">
+        <classes>
+            <class name="org.appium.tests.EcommerceApp_TC01">
+                <methods>
+                    <include name="ErrorValidation"/>
+                    <include name="FillForm"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="End to End Framework">
+        <classes>
+            <class name="org.appium.tests.EcommerceApp_TC02">
+                <methods>
+                    <include name="FillForm"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
