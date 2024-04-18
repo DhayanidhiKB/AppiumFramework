@@ -2,6 +2,7 @@ package org.appium.tests;
 
 import com.google.common.collect.ImmutableMap;
 import io.appium.java_client.android.Activity;
+import org.appium.properties.UserConfig;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.testng.Assert;
@@ -12,12 +13,12 @@ public class EcommerceApp_TC01 extends BaseTest {
 
     @BeforeMethod
     public void preSetup() {
-        ((JavascriptExecutor) driver).executeScript("mobile: startActivity", ImmutableMap.of("intent", "com.androidsample.generalstore/com.androidsample.generalstore.SplashActivity"));
+        formPage.setActivity();
     }
 
     @Test
     public void ErrorValidation() {
-        formPage.setNameField("");
+        formPage.setNameField(UserConfig.getProperties().name());
         formPage.setFormSelection();
         formPage.validateErrorMessage();
 
@@ -25,8 +26,8 @@ public class EcommerceApp_TC01 extends BaseTest {
 
     @Test
     public void FillForm() {
-        formPage.setNameField("Praveen");
-        formPage.setGender("Male");
+        formPage.setNameField(UserConfig.getProperties().name());
+        formPage.setGender(UserConfig.getProperties().gender());
         formPage.setFormSelection();
         formPage.formPagePositiveCase();
     }
