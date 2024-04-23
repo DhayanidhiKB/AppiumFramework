@@ -23,7 +23,7 @@ public class AppiumUtils {
 
     public static String currentDateTime() {
         var date = Calendar.getInstance().getTime();
-        DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd-HH-mm-ss");
+        DateFormat dateFormat = new SimpleDateFormat("yyyy-MMM-dd-HH-mm-ss");
         return dateFormat.format(date);
     }
 

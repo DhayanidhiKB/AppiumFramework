@@ -11,7 +11,7 @@ public class ExtentReporter {
     public static ExtentReports extentReports;
 
     public static ExtentReports getReport(){
-        ExtentSparkReporter reporter=new ExtentSparkReporter(ROOT_DIRECTORY+ UserConfig.getProperties().reportPath() +  "_" + AppiumUtils.currentDateTime());
+        ExtentSparkReporter reporter=new ExtentSparkReporter(ROOT_DIRECTORY+ UserConfig.getProperties().reportPath() + " " + AppiumUtils.currentDateTime());
         reporter.config().setDocumentTitle("Mobile Automation Results");
 
         extentReports=new ExtentReports();
