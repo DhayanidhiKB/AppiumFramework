@@ -1,11 +1,7 @@
 package org.appium.tests;
 
-import com.google.common.collect.ImmutableMap;
-import io.appium.java_client.android.Activity;
 import org.appium.properties.UserConfig;
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.testng.Assert;
+import org.appium.testUtils.BaseTest;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
@@ -18,10 +14,9 @@ public class EcommerceApp_TC01 extends BaseTest {
 
     @Test
     public void ErrorValidation() {
-        formPage.setNameField(UserConfig.getProperties().name());
+        formPage.setNameField("");
         formPage.setFormSelection();
         formPage.validateErrorMessage();
-
     }
 
     @Test

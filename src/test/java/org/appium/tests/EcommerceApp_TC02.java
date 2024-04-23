@@ -2,6 +2,7 @@ package org.appium.tests;
 
 
 import org.appium.properties.UserConfig;
+import org.appium.testUtils.BaseTest;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 

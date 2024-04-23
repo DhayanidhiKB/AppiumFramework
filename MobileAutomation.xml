@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="All Test Suite">
+<suite name="Mobile Automation TestCases">
+    <listeners>
+        <listener class-name="org.appium.testUtils.Listeners"/>
+    </listeners>
     <test  name="Form Page Validation">
         <classes>
             <class name="org.appium.tests.EcommerceApp_TC01">
@@ -15,7 +18,7 @@
         <classes>
             <class name="org.appium.tests.EcommerceApp_TC02">
                 <methods>
-                    <include name="FillForm"/>
+                    <include name="PlaceOrder"/>
                 </methods>
             </class>
         </classes>

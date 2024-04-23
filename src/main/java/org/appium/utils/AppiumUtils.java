@@ -1,13 +1,11 @@
 package org.appium.utils;
 
 import io.appium.java_client.AppiumDriver;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedCondition;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
-import java.time.Duration;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+
+import java.util.Calendar;
 
 public class AppiumUtils {
 
@@ -23,8 +21,10 @@ public class AppiumUtils {
         return price;
     }
 
-    public void waitForELementToAppear(WebElement element){
-        WebDriverWait wait=new WebDriverWait(driver, Duration.ofSeconds(5));
-        wait.until(ExpectedConditions.attributeContains((element),"text","cart"));
+    public static String currentDateTime() {
+        var date = Calendar.getInstance().getTime();
+        DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd-HH-mm-ss");
+        return dateFormat.format(date);
     }
+
 }
